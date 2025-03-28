@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & FAQ - QueryNest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #004080;
+        }
+        .faq-item {
+            margin-bottom: 15px;
+        }
+        .faq-question {
+            font-weight: bold;
+            cursor: pointer;
+            background: #e6f2ff;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .faq-answer {
+            display: none;
+            padding: 10px;
+            background: #fff;
+            border-left: 3px solid #004080;
+            margin-top: 5px;
+        }
+        .support-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function toggleAnswer(index) {
+            var answer = document.getElementById("answer-" + index);
+            if (answer.style.display === "none" || answer.style.display === "") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Support & FAQ</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(1)">How can I submit a complaint?</div>
+            <div class="faq-answer" id="answer-1">You can submit a complaint through the "Complaint Submission" page by filling out the necessary details and selecting the appropriate category.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(2)">How can I track my complaint?</div>
+            <div class="faq-answer" id="answer-2">You can track your complaint status on the "Complaint Tracking" page using your complaint ID.</div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleAnswer(3)">How long does it take to resolve a complaint?</div>
+            <div class="faq-answer" id="answer-3">Resolution times vary based on the nature of the complaint. Typically, most complaints are addressed within 3-5 business days.</div>
+        </div>
+        
+        <div class="support-section">
+            <h3>Need More Help?</h3>
+            <p>Contact our support team at <strong>support@querynest.com</strong> or call <strong>+1 234 567 890</strong>.</p>
+        </div>
+    </div>
+</body>
+</html>
