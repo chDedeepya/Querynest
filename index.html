@@ -15,7 +15,8 @@
       --primary: #3B82F6;
       --primary-dark: #1E40AF;
       --secondary: #10B981;
-      --background: #F9FAFB;
+      --background: #3B82F6;
+      --background-light: #F3F4F6;
       --card-bg: #FFFFFF;
       --text: #111827;
       --text-secondary: #6B7280;
@@ -63,6 +64,19 @@
 
     .sidebar-hidden {
       transform: translateX(-100%);
+      --primary: #60A5FA;
+      --primary-dark: #2563EB;
+      --secondary: #34D399;
+      --background: #111827;
+    }
+
+    @media (min-width: 1025px) {
+      .sidebar {
+        transform: translateX(0) !important;
+      }
+      .sidebar-hidden {
+        transform: translateX(0) !important;
+      }
     }
 
     .sidebar a {
@@ -141,7 +155,7 @@
 
     table th {
       background: var(--primary);
-      color: #FFFFFF;
+      color: #fdf3f3;
       font-weight: 600;
       position: sticky;
       top: 0;
@@ -245,7 +259,7 @@
       font-size: 0.75rem;
     }
 
-     .login-page {
+    .login-page {
       background: linear-gradient(45deg, #1e3a8a, #2563eb, #60a5fa);
       background-size: 200% 200%;
       animation: gradientShift 15s ease infinite;
@@ -287,7 +301,6 @@
     }
 
     .login-card {
-
       border: 1px solid rgba(0, 0, 0, 0.3);
       box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
       border-radius: 2.5rem;
@@ -299,7 +312,6 @@
       transform: translateY(-6px);
       box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
     }
-    
 
     .faq-item {
       border-bottom: 1px solid var(--border);
@@ -320,12 +332,6 @@
       display: none;
       margin-top: 0.5rem;
       color: var(--text-secondary);
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     @media (max-width: 640px) {
@@ -360,7 +366,7 @@
   </div>
 
   <!-- Sidebar Navigation -->
-  <div class="fixed inset-y-0 left-0 w-64 sidebar z-40 transform lg:transform-none hidden" id="sidebar">
+  <div class="fixed inset-y-0 left-0 w-64 sidebar z-40 transform sidebar-hidden lg:transform-none" id="sidebar">
     <div class="p-4 flex items-center gap-3 border-b border-[var(--border)]">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTReYn9af4RasjHQ75t7LZjbMVn_xVohEMdSQ&s" alt="Logo" class="w-10" />
       <h1 class="text-lg font-bold">Querynest</h1>
@@ -1049,7 +1055,9 @@
     });
 
     document.getElementById('menuToggle').addEventListener('click', () => {
-      document.getElementById('sidebar').classList.toggle('sidebar-hidden');
+      if (window.innerWidth <= 1024) {
+        document.getElementById('sidebar').classList.toggle('sidebar-hidden');
+      }
     });
 
     function showNotifications() {
@@ -1066,3 +1074,4 @@
   </script>
 </body>
 </html>
+
